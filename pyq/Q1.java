@@ -68,7 +68,11 @@ public class Q1 {
                     }
                 }
             }
-            map.computeIfAbsent(key, k -> new ArrayList<>()).add(t);
+            if (!map.containsKey(key)) {
+                map.put(key, new ArrayList<>());
+            }
+
+            map.get(key).add(t);
         }
 
         return new ArrayList<>(fraud);
