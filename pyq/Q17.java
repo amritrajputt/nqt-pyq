@@ -1,5 +1,4 @@
-
-
+package pyq;
 import java.util.*;
 //  A store tracks the sales of items. For each sale, the item name, quantity, and price per unit are recorded.
 

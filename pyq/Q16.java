@@ -17,7 +17,7 @@
 
 // Given an initial time h:m, current time h1:m1, and x, display the delay in
 // minutes from the initial time after x hours.
-
+package pyq;
 
 import java.util.*;
 
