@@ -1,4 +1,4 @@
-
+package pyq;
 import java.util.Scanner;
 
 // Given a string inputStr and an integer value, transform the string using the following rules:
