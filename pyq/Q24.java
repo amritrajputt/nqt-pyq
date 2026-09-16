@@ -7,6 +7,8 @@
 // Enter space-separated elements: 1 2 3 2 2 4 2
 // Sample Output
 // 2
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Q24 {
@@ -18,6 +20,7 @@ public class Q24 {
             arr[i] = sc.nextInt();
         }
         int ans = majority(arr, n);
+        System.out.println(majorityElements(arr));
         System.out.println(ans);
         sc.close();
     }
@@ -45,4 +48,19 @@ public class Q24 {
 
         return count > n / 3 ? ele : -1;
     }
+    // n/3 all elements approach
+    static ArrayList<Integer> majorityElements(int arr[]){
+        ArrayList<Integer> ans= new ArrayList<>();
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+            if(map.get(arr[i]) > arr.length/3 && !ans.contains(arr[i])){
+                ans.add(arr[i]);
+            }
+        }
+        return ans;
+    }
 }
+
+
+
