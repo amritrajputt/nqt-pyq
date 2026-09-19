@@ -6,16 +6,27 @@ import java.util.Scanner;
 public class Q30 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int sum = 0;
-        int temp = n;
-        while (n > 0) {
-            int rem = n%10;
-            sum+=rem*rem*rem;
-            n/=10;
+        String s = sc.nextLine();
+        String[] numbers = s.trim().split("\\s+");
+        boolean found= false;
+        for(String num:numbers){
+            int n = Integer.parseInt(num);
+            if(isArmStrong(n)){
+                System.out.println(n);
+                found=true;
+            }
         }
-        if (sum==temp) System.out.print("true");
-        else System.out.println("false");
+        if(!found) System.out.println("No Armstrong number");
         sc.close();
+    }
+    private static boolean isArmStrong(int n){
+        int temp = n;
+        int sum =0;
+        while(temp>0){
+            int rem = temp%10;
+            sum += rem*rem*rem;
+            temp/=10;
+        }
+        return n==sum;
     }
 }
