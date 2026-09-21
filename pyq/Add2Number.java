@@ -36,7 +36,7 @@ public class Add2Number {
             }
         }
         Node ans = addNumber(head1, head2);
-        while(ans!=null){
+        while (ans != null) {
             System.out.println(ans.val);
             ans = ans.next;
         }
